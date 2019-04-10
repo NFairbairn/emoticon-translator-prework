@@ -42,7 +42,7 @@ def get_english_meaning(file_path, emoticon)
   library = load_library('./lib/emoticons.yml')
   library.each do |meaning_or_emoticon, inner_hash|
     if meaning_or_emoticon == "get_meaning"
-      inner_hash.each do |english, japanese|
+      inner_hash.each do |japanese, meaning|
         if inner_hash.keys.include?(emoticon)
           if emoticon == english
             return japanese
