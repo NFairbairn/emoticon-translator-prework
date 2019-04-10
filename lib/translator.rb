@@ -44,7 +44,7 @@ def get_english_meaning(file_path, emoticon)
     if meaning_or_emoticon == "get_meaning"
       inner_hash.each do |japanese, meaning|
         if inner_hash.keys.include?(emoticon)
-          if emoticon == english
+          if emoticon == japanese
             return japanese
           end
         else
