@@ -40,4 +40,17 @@ def get_english_meaning(file_path, emoticon)
   file_path = YAML.load_file('./lib/emoticons.yml')
   # code goes here
   library = load_library('./lib/emoticons.yml')
+  library.each do |meaning_or_emoticon, inner_hash|
+    if meaning_or_emoticon == "get_meaning"
+      inner_hash.each do |english, japanese|
+        if inner_hash.keys.include?(emoticon)
+          if emoticon == english
+            return japanese
+          end
+        else
+            return "Sorry, that emoticon was not found"
+          end
+      end
+    end
+  end
 end
